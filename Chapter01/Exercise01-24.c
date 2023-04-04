@@ -1,7 +1,8 @@
-/* Exercise 1-24. Write a program to check a C program for rudimentary syntax errors
-   like unmatched parentheses, brackets and braces. Don't forget about quotes, both
-   single and double, escape sequences, and comments. (This program is hard if you do
-   it in full generality.) */
+/* Exercise 1-24. Write a program to check a C program for rudimentary syntax
+   errors like unmatched parentheses, brackets and braces. Don't forget about
+   quotes, both single and double, escape sequences, and comments. (This program
+   is hard if you do it in full generality.) */
+
 
 #include<stdio.h>
 
@@ -15,16 +16,19 @@
 
 int getline(char line[], int maxline);
 
-main()                      /* This is EXTREMELY RUDIMENTARY and does not work perfectly... */
+
+/* This is EXTREMELY RUDIMENTARY and does not work perfectly... */
+
+main()
 {
     int i, pos;
     int dqstep, sqstep;
     int check[6];
     char line[MAXLINE];
 
-    pos = 0;                                /* Position in the input line */
+    pos = 0;                    /* Position in the input line */
 
-    dqstep = sqstep = 1;                    /* Steps used for double and single quotes */
+    dqstep = sqstep = 1;        /* Steps used for double and single quotes */
 
     for(i = 0; i < 6; ++i)
         check[i] = 0;
@@ -109,7 +113,10 @@ main()                      /* This is EXTREMELY RUDIMENTARY and does not work p
     return 0;
 }
 
-int getline(char s[], int lim)      /* Read a line into "s"; return length. */
+
+/* getline: read a line into "s"; return length. */
+
+int getline(char s[], int lim)
 {
     int c, i;
 

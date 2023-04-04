@@ -1,5 +1,5 @@
-/* Exercise 1-11. How would you test the word count program? What kinds of
-   input are most likely to uncover bugs if there are any? */
+/* Exercise 1-11. How would you test the word count program? What kinds of input
+   are most likely to uncover bugs if there are any? */
 
 
 /* Answer as you can. The program is below. */
@@ -10,7 +10,8 @@
 #define IN 1        /* inside a word */
 #define OUT 0       /* outside a word */
 
-/* count lines, words, and characters in input */
+
+/* Count lines, words, and characters in input */
 
 main()
 {

@@ -1,5 +1,7 @@
-/* Exercise 1-16. Revise the main routine of the longest-line program so it will correctly
-   print the length of arbitrary long input lines, and as much as possible of the text. */
+/* Exercise 1-16. Revise the main routine of the longest-line program so it will
+   correctly print the length of arbitrary long input lines, and as much as
+   possible of the text. */
+
 
 #include <stdio.h>
 
@@ -9,7 +11,8 @@ int getline(char line[], int maxline);
 
 void copy(char to[], char from[]);
 
-/* print the longest input line */
+
+/* Print the longest input line */
 
 main()
 {
@@ -49,7 +52,8 @@ main()
     return 0;
 }
 
-/* getline: read a line into s, return length */
+
+/* getline: read a line into s, return length. */
 
 int getline(char s[], int lim)
 {
@@ -70,7 +74,8 @@ int getline(char s[], int lim)
     return i;
 }
 
-/* copy: copy 'from' into 'to'; assume 'to' is big enough */
+
+/* copy: copy "from" into "to"; assume "to" is big enough. */
 
 void copy(char to[], char from[])
 {

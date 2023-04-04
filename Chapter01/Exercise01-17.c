@@ -1,5 +1,6 @@
-/* Exercise 1-17. Write a program to print all input lines that are
-   longer than 80 characters. */
+/* Exercise 1-17. Write a program to print all input lines that are longer than
+   80 characters. */
+
 
 #include <stdio.h>
 
@@ -8,7 +9,10 @@
 
 int getline(char line[], int maxline);
 
-main()                  /* Print all input lines that are longer than MINLIMIT characters. */
+
+/* Print all input lines that are longer than MINLIMIT characters. */
+
+main()
 {
     int len;                /* Current line length */
     char line[MAXLINE];     /* Current input line */
@@ -22,7 +26,10 @@ main()                  /* Print all input lines that are longer than MINLIMIT c
     return 0;
 }
 
-int getline(char s[],int lim)   /* Read a line into s; return length. */
+
+/* getline: read a line into "s"; return length. */
+
+int getline(char s[],int lim)
 {
     int c, i;
 

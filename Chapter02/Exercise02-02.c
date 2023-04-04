@@ -1,4 +1,5 @@
-/* Exercise 2-2. Write a loop equivalent to the "for" loop above without using "&&" or "||". */
+/* Exercise 2-2. Write a loop equivalent to the "for" loop above without using
+   "&&" or "||". */
 
 /* The loop is the one used in the function "getline":
 
@@ -6,11 +7,13 @@
 
    The solution is in a new version of the function. */
 
+
 #include <stdio.h>
 
 #define MAXLINE 1000    /* Maximum input line length */
 
 int getline(char line[], int maxline);
+
 
 main()
 {
@@ -26,7 +29,10 @@ main()
     return 0;
 }
 
-int getline(char s[], int lim)      /* Read a line into "s"; return length. 2nd version. */
+
+/* getline: read a line into "s"; return length. 2nd version. */
+
+int getline(char s[], int lim)
 {
     enum boolean {NO, YES};
     int c;

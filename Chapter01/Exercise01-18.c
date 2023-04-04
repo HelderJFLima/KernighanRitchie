@@ -1,5 +1,6 @@
-/* Exercise 1-18. Write a program to remove trailing blanks and tabs from
-   each line of input, and to delete entirely blank lines. */
+/* Exercise 1-18. Write a program to remove trailing blanks and tabs from each
+   line of input, and to delete entirely blank lines. */
+
 
 #include <stdio.h>
 
@@ -7,7 +8,11 @@
 
 int getline(char line[], int maxline);
 
-main()          /* Remove trailing blanks and tabs from each line of input and delete blank lines. */
+
+/* Remove trailing blanks and tabs from each line of input and delete blank
+   lines. */
+
+main()
 {
     int len;                /* Current line length */
     int pos;                /* Position of a character in a line */
@@ -19,7 +24,8 @@ main()          /* Remove trailing blanks and tabs from each line of input and d
     {
         pos = len - 2;
 
-        while( pos > 0 && (line[pos] == ' ' || line[pos] == '\t') )     /* Find the last non-blank character. */
+                                        /* Find the last non-blank character. */
+        while( pos > 0 && (line[pos] == ' ' || line[pos] == '\t') )
             --pos;
 
         if(pos == len - 2 && pos > 0)
@@ -38,7 +44,10 @@ main()          /* Remove trailing blanks and tabs from each line of input and d
     return 0;
 }
 
-int getline(char s[],int lim)   /* Read a line into s; return length. */
+
+/* getline: read a line into "s"; return length. */
+
+int getline(char s[],int lim)
 {
     int c, i;
 

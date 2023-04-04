@@ -1,5 +1,7 @@
-/* Exercise 1-19. Write a function "reverse(s)" that reverses the character string s.
-   Use it to write a program that reverses its input a line at a time. */
+/* Exercise 1-19. Write a function "reverse(s)" that reverses the character
+   string s. Use it to write a program that reverses its input a line at a
+   time. */
+
 
 #include <stdio.h>
 
@@ -9,7 +11,10 @@ int getline(char line[], int maxline);
 
 void reverse(char string[]);
 
-main()                  /* Reverses its text input a line at a time */
+
+/* Reverse the text input a line at a time. */
+
+main()
 {
     char line[MAXLINE];     /* Current input line */
 
@@ -25,7 +30,10 @@ main()                  /* Reverses its text input a line at a time */
     return 0;
 }
 
-int getline(char s[], int lim)      /* Read a line into "s"; return length. */
+
+/* getline: read a line into "s"; return length. */
+
+int getline(char s[], int lim)
 {
     int c, i;
 
@@ -44,11 +52,15 @@ int getline(char s[], int lim)      /* Read a line into "s"; return length. */
     return i;
 }
 
-void reverse(char s[])      /* Reverse the character string "s". */
+
+/* reverse: reverse the character string "s". */
+
+void reverse(char s[])
 {
     char temp;
     int i;
-    int last;       /* Position of the last character to exchange */
+    int last;                               /* Position of the last character
+                                               to exchange */
 
     for(last = 0; s[last] != '\0'; ++last)  /* Find the last valid position. */
         ;

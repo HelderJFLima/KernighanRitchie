@@ -1,6 +1,8 @@
 /* Exercise 1-8. Write a program to count blanks, tabs, and newlines. */
 
+
 #include <stdio.h>
+
 
 main()
 {
@@ -28,5 +30,7 @@ main()
 
     printf("\n\nBlanks counting:\n");
 
-    printf("\nBlanks: %d\n\nTabs: %d\n\nNew lines: %d\n\nTotal: %d\n\n", nb, nt, nnl, nb + nt + nnl);
+    printf("\nBlanks: %d\n\nTabs: %d\n\nNew lines: ", nb, nt);
+
+    printf("%d\n\nTotal: %d\n\n", nnl, nb + nt + nnl);
 }

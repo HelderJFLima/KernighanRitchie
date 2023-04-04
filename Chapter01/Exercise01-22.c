@@ -1,7 +1,8 @@
-/* Exercise 1-22. Write a program to "fold" long input lines into two or more shorter
-   lines after the last non-blank character that occurs before the n-th column of input.
-   Make sure your program does something intelligent with very long lines, and if there
-   are no blanks or tabs before the specified column. */
+/* Exercise 1-22. Write a program to "fold" long input lines into two or more
+   shorter lines after the last non-blank character that occurs before the n-th
+   column of input. Make sure your program does something intelligent with very
+   long lines, and if there are no blanks or tabs before the specified column. */
+
 
 #include <stdio.h>
 
@@ -17,8 +18,12 @@ int getline_detab(char line[], int tabsize, int maxline);
 
 void partialcopy(char to[], char from[], int start, int end);
 
-main()                          /* Cut long input lines into shorter lines after the last non-blank */
-{                               /* character that occurs before the n-th column of input */
+
+/* Cut long input lines into shorter lines after the last non-blank character
+   that occurs before the n-th column of input */
+
+main()
+{
     int fvchar, lvchar, pos;
     int lstate, wstate;
     char fulline[MAXLINE], shortline[MAXSIZE + 1];
@@ -79,15 +84,18 @@ main()                          /* Cut long input lines into shorter lines after
             {
                 if (fulline[pos] != '\0')
                 {
-                    if(lvchar <= fvchar && wstate == INWORD)    /* If it's still the first word of the short line */
+                                            /* If it's still the first word of
+                                               the short line */
+                    if(lvchar <= fvchar && wstate == INWORD)
                         lvchar = pos - 1;
+
                 }
                 else if (wstate == INWORD)
                     lvchar = pos - 1;
 
                 partialcopy(shortline, fulline, fvchar, lvchar);
 
-                printf("%s\n", shortline);                          /** OUTPUT **/
+                printf("%s\n", shortline);                      /** OUTPUT **/
 
                 lstate = OUTLINE;
 
@@ -101,22 +109,27 @@ main()                          /* Cut long input lines into shorter lines after
     return 0;
 }
 
-int getline_detab(char s[], int tab, int lim)   /* Read a line into "s" and replace tabs with the proper */
-{                                               /* number of blanks; return length. */
+
+/* getline_detab: read a line into "s" and replace tabs with the proper number
+                  of blanks; return length. */
+
+int getline_detab(char s[], int tab, int lim)
+{
     int c, i, j, n;
 
     for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
     {
         if(c != '\t')
             s[i] = c;
-        else                                        /* Replace a tab. */
+        else                                /* Replace a tab. */
         {
-            n = tab - ( i - (i / tab) * tab );          /* Number of spaces to put in the line */
+            n = tab - ( i - (i / tab) * tab );  /* Number of spaces to put in
+                                                   the line */
 
             for(j = 0; j < n && i + j < lim - 1; ++j)
                 s[i + j] = ' ';
 
-            if(i + j < lim - 1 || j == n)               /* To prevent overflow */
+            if(i + j < lim - 1 || j == n)       /* To prevent overflow */
                 i = i + n - 1;
             else
                 i = lim - 2;
@@ -135,8 +148,12 @@ int getline_detab(char s[], int tab, int lim)   /* Read a line into "s" and repl
     return i;
 }
 
-void partialcopy(char to[], char from[], int a, int b)  /* Copy a piece of "from" into "to", from positions */
-{                                                       /* "a" to "b"; assume "to" is big enough. */
+
+/* partialcopy: copy a piece of "from" into "to", from positions "a" to "b";
+                assume "to" is big enough. */
+
+void partialcopy(char to[], char from[], int a, int b)
+{
     int i;
 
     for(i = a; i <= b; ++i)

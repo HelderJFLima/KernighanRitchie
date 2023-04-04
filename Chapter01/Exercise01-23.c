@@ -1,6 +1,7 @@
-/* Exercise 1-23. Write a program to remove all comments from a C program.
-   Don't forget to handle quoted strings and character constants properly.
-   C comments don't nest. */
+/* Exercise 1-23. Write a program to remove all comments from a C program. Don't
+   forget to handle quoted strings and character constants properly. C comments
+   don't nest. */
+
 
 #include <stdio.h>
 
@@ -12,10 +13,13 @@ int getline(char line[], int maxline);
 
 void partialcopy(char to[], char from[], int start, int end);
 
-main()                      /* Remove all comments from a C program. */
+
+/* Remove all comments from a C program. */
+
+main()
 {
     int cstate, pos;
-    int fvchar, lvchar;                     /* First and last valid characters to print */
+    int fvchar, lvchar;         /* First and last valid characters to print */
     char input[MAXLINE], output[MAXLINE];
 
     cstate = CMOFF;
@@ -55,7 +59,7 @@ main()                      /* Remove all comments from a C program. */
                     {
                         partialcopy(output, input, fvchar, lvchar);
 
-                        printf("%s", output);                           /** OUTPUT 1 **/
+                        printf("%s", output);                   /** OUTPUT 1 **/
                     }
                 }
                 else if(pos == 0)
@@ -82,7 +86,7 @@ main()                      /* Remove all comments from a C program. */
                     ++pos;
             }                                           /* End of comment test */
 
-            if(input[pos] == '\0')                      /* Start of end-of-string test */
+            if(input[pos] == '\0')                  /* Start of end-of-string test */
             {
                 if(cstate == CMOFF)
                 {
@@ -90,7 +94,7 @@ main()                      /* Remove all comments from a C program. */
 
                     partialcopy(output, input, fvchar, lvchar);
 
-                    printf("%s", output);                               /** OUTPUT 2 **/
+                    printf("%s", output);                       /** OUTPUT 2 **/
 
                     if(input[pos - 1] != '\n')
                         printf("\n");
@@ -99,14 +103,17 @@ main()                      /* Remove all comments from a C program. */
                 {
                     printf("\n");
                 }
-            }                                           /* End of end-of-string test */
+            }                                       /* End of end-of-string test */
         }
     }
 
     return 0;
 }
 
-int getline(char s[], int lim)      /* Read a line into "s"; return length. */
+
+/* getline: read a line into "s"; return length. */
+
+int getline(char s[], int lim)
 {
     int c, i;
 
@@ -125,8 +132,12 @@ int getline(char s[], int lim)      /* Read a line into "s"; return length. */
     return i;
 }
 
-void partialcopy(char to[], char from[], int a, int b)  /* Copy a piece of "from" into "to", from positions */
-{                                                       /* "a" to "b"; assume "to" is big enough. */
+
+/* partialcopy: copy a piece of "from" into "to", from positions "a" to "b";
+                assume "to" is big enough. */
+
+void partialcopy(char to[], char from[], int a, int b)
+{
     int i;
 
     for(i = a; i <= b; ++i)

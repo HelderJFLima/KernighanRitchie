@@ -2,11 +2,13 @@
    in its input. It is easy to draw the histogram with the bars horizontal; a
    vertical orientation is more challenging. */
 
+
 #include <stdio.h>
 
 #define MAXLEN 20   /* Max length of words accepted to count. */
 #define IN 1        /* Inside a word */
 #define OUT 0       /* Outside a word */
+
 
 main()
 {
@@ -31,7 +33,7 @@ main()
         {
             state = OUT;
 
-            if(wlen <= MAXLEN)                      /* The histogram is of lengths up to MAXLEN. */
+            if(wlen <= MAXLEN)      /* The histogram is from lengths up to MAXLEN. */
                 ++wcount[wlen - 1];
 
             wlen = 0;
