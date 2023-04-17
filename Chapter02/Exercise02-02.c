@@ -1,6 +1,7 @@
 /* Exercise 2-2. Write a loop equivalent to the "for" loop above without using
    "&&" or "||". */
 
+
 /* The loop is the one used in the function "getline":
 
    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i).
@@ -19,7 +20,7 @@ main()
 {
     char line[MAXLINE];
 
-        printf("\nEnter phrases:\n\n");
+    printf("\nEnter phrases:\n\n");
 
     while( getline(line, MAXLINE) > 0 )
         printf("%s\n\n", line);
