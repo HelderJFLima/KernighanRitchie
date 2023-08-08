@@ -234,16 +234,16 @@ void qsortt(void *v[], int left, int right,
 {
     int i, last;
 
-    if (left >= right)      /* Do nothing if array contains fewer than two */
+    if(left >= right)       /* Do nothing if array contains fewer than two */
         return;             /* elements. */
 
     swap(v, left, (left + right) / 2);
 
     last = left;
 
-    for (i = left + 1; i <= right; i++)
+    for(i = left + 1; i <= right; i++)
     {
-        if ( (*comp)( v[i], v[left] ) < 0 )
+        if( (*comp)( v[i], v[left] ) < 0 )
             swap(v, ++last, i);
     }
 

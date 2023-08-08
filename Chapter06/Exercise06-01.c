@@ -41,19 +41,19 @@ int getword(char *word, int lim)
         }
     }
 
-    if (c != EOF)
+    if(c != EOF)
         *w++ = c;
 
-    if (!isalpha(c) && c != '_' && c != '\"' && c != '#')   /* New features */
+    if(!isalpha(c) && c != '_' && c != '\"' && c != '#')   /* New features */
     {
         *w = '\0';
 
         return c;
     }
 
-    for ( ; --lim > 0; w++)
+    for( ; --lim > 0; w++)
     {
-        if (!isalnum( *w = getch() ) && *w != '_' && *w != '\"' && *w != '#')
+        if(!isalnum( *w = getch() ) && *w != '_' && *w != '\"' && *w != '#')
         {
             ungetch(*w);
 
